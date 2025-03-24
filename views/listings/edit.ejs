@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-    <form>
+    <form method="post" action="/listings/<%=listing._id%>?_method=PUT">
         <br><br>
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit your listing</h2>
         <input type="text" name="listing[title]" value="<%=listing.title%>"><br><br>

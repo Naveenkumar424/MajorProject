@@ -4,10 +4,12 @@ const mongoose = require("mongoose");
 const Listings = require("./models/listing");
 const path = require("path");
 const Listing = require("./models/listing");
+const methodOverride = require("method-override");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 MONGO_URL = "mongodb://127.0.0.1:27017/safarsathi";
 
@@ -55,6 +57,20 @@ app.post("/listings",async(req,res)=>{
 app.get("/listings/:id/edit",async(req,res)=>{
     const listing = await Listings.findById(req.params.id);
     res.render("listings/edit.ejs",{listing});
+});
+
+app.put("/listings/:id",async(req,res)=>{
+    const {id} = req.params;
+    const listing = await Listings.findByIdAndUpdate(id,{...req.body.listing});
+    res.redirect(`/listings/${id}`);
+});
+
+
+//delete route
+app.delete("/listings/:id",async(req,res)=>{
+    const {id} = req.params;
+    await Listings.findByIdAndDelete(id);
+    res.redirect("/listings");
 });
 
 
