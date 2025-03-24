@@ -25,12 +25,12 @@
     <form method="post" action="/listings">
         <br><br>
         <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a new listing</h2>
-        <input type="text" name="title" placeholder="Title"><br><br>
-        <input type="text" name="description" placeholder="Description"><br><br>
-        <input type="text" name="image" placeholder="Image URL"><br><br>
-        <input type="number" name="price" placeholder="Price"><br><br>
-        <input type="text" name="location" placeholder="Location"><br><br>
-        <input type="text" name="country" placeholder="Country"><br><br>
+        <input type="text" name="listing[title]" placeholder="Title"><br><br>
+        <input type="text" name="listing[description]" placeholder="Description"><br><br>
+        <input type="text" name="listing[image]" placeholder="Image URL"><br><br>
+        <input type="number" name="listing[price]" placeholder="Price"><br><br>
+        <input type="text" name="listing[location]" placeholder="Location"><br><br>
+        <input type="text" name="listing[country]" placeholder="Country"><br><br>
         <button type="submit">Create listing</button>
         <button type="reset">Reset</button>
     </form>

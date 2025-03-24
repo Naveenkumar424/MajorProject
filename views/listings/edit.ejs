@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wandeerlust</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin: 0 auto;
+        }
+        input{
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button{
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <br><br>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit your listing</h2>
+        <input type="text" name="listing[title]" value="<%=listing.title%>"><br><br>
+        <input type="text" name="listing[description]" value="<%=listing.description%>"><br><br>
+        <input type="text" name="listing[image]" value="<%=listing.image.url%>"><br><br>
+        <input type="number" name="listing[price]" value="<%=listing.price%>"><br><br>
+        <input type="text" name="listing[location]" value="<%=listing.location%>"><br><br>
+        <input type="text" name="listing[country]" value="<%=listing.country%>"><br><br>
+        <button type="submit">Edit listing</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

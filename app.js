@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const Listings = require("./models/listing");
 const path = require("path");
+const Listing = require("./models/listing");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -41,6 +42,19 @@ app.get("/listings/new",(req,res)=>{
 app.get("/listings/:id",async(req,res)=>{
     const listing = await Listings.findById(req.params.id);
     res.render("./listings/show.ejs",{listing:listing});
+});
+
+//create route
+app.post("/listings",async(req,res)=>{
+    const newListing = new Listing(req.body.listing);
+    await newListing.save();
+    res.redirect("/listings");
+});
+
+//edit route
+app.get("/listings/:id/edit",async(req,res)=>{
+    const listing = await Listings.findById(req.params.id);
+    res.render("listings/edit.ejs",{listing});
 });
 
 
