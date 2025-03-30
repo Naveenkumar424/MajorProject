@@ -3,16 +3,43 @@
     <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
-    <form method="post" action="/listings">
-        <br><br>
-        <h2>Create a new listing</h2>
-        <input type="text" name="listing[title]" placeholder="Title"><br><br>
-        <input type="text" name="listing[description]" placeholder="Description"><br><br>
-        <input type="text" name="listing[image]" placeholder="Image URL"><br><br>
-        <input type="number" name="listing[price]" placeholder="Price"><br><br>
-        <input type="text" name="listing[location]" placeholder="Location"><br><br>
-        <input type="text" name="listing[country]" placeholder="Country"><br><br>
-        <button type="submit">Create listing</button>
-        <button type="reset">Reset</button>
-    </form>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form method="post" action="/listings">
+                <br><br>
+                <h2>Create a new listing</h2>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="listing[title]" placeholder="Title" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" name="listing[description]" placeholder="Description" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="text" name="listing[image]" placeholder="Image URL" class="form-control">
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="listing[price]" placeholder="Price" class="form-control">
+                    </div>
+                    <div class="col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" name="listing[country]" placeholder="Country" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" name="listing[location]" placeholder="Location" class="form-control">
+                </div>
+                <br>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Create listing</button>
+                    <button type="reset" class="btn btn-primary mb-3">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
