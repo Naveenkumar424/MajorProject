@@ -8,6 +8,7 @@
             <form method="post" action="/listings">
                 <br><br>
                 <h2>Create a new listing</h2>
+                <br><br>
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" name="listing[title]" placeholder="Title" class="form-control">
@@ -23,23 +24,24 @@
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" name="listing[price]" placeholder="Price" class="form-control">
+                        <input type="number" name="listing[price]" placeholder="1200" class="form-control">
                     </div>
                     <div class="col-md-8">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" name="listing[country]" placeholder="Country" class="form-control">
+                        <input type="text" name="listing[country]" placeholder="India" class="form-control">
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
-                    <input type="text" name="listing[location]" placeholder="Location" class="form-control">
+                    <input type="text" name="listing[location]" placeholder="Baga beach ,Goa" class="form-control">
                 </div>
                 <br>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Create listing</button>
-                    <button type="reset" class="btn btn-primary mb-3">Reset</button>
+                    <button type="submit" class="btn btn-danger mb-3">Create listing</button>
+                    <button type="reset" class="btn btn-danger mb-3">Reset</button>
                 </div>
             </form>
+            <br>
         </div>
     </div>
 </body>
