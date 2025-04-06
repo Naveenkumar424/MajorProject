@@ -5,17 +5,17 @@
 <body>
     <div class="row">
         <div class="col-8 offset-2">
-            <form method="post" action="/listings">
+            <form method="post" action="/listings" novalidate class="needs-validation">
                 <br><br>
                 <h2>Create a new listing</h2>
                 <br><br>
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" name="listing[title]" placeholder="Title" class="form-control">
+                    <input type="text" name="listing[title]" placeholder="Title" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <input type="text" name="listing[description]" placeholder="Description" class="form-control">
+                    <input type="text" name="listing[description]" placeholder="Description" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
@@ -24,16 +24,16 @@
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" name="listing[price]" placeholder="1200" class="form-control">
+                        <input type="number" name="listing[price]" placeholder="1200" class="form-control" required>
                     </div>
                     <div class="col-md-8">
                         <label for="country" class="form-label">Country</label>
-                        <input type="text" name="listing[country]" placeholder="India" class="form-control">
+                        <input type="text" name="listing[country]" placeholder="India" class="form-control" required>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
-                    <input type="text" name="listing[location]" placeholder="Baga beach ,Goa" class="form-control">
+                    <input type="text" name="listing[location]" placeholder="Baga beach ,Goa" class="form-control" required>
                 </div>
                 <br>
                 <div class="col-auto">
@@ -44,4 +44,25 @@
             <br>
         </div>
     </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+            }, false)
+        })
+        })()
+    </script>
 </body>
